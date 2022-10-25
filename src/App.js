@@ -1,14 +1,19 @@
-import Header from "./components/Header";
-import PokemonGrid from "./components/PokemonGrid";
-import { PokemonContextProvider } from "./store/PokemonStore";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./routes/Home";
+import PokemonPage from "./routes/PokemonPage";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: '/:pokemonId',
+    element: <PokemonPage/>
+  }
+]);
 
 function App() {
-  return (
-    <PokemonContextProvider>
-      <Header heading={"PokeData!"} />
-      <PokemonGrid/>
-    </PokemonContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

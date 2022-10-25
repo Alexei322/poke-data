@@ -1,8 +1,9 @@
+import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
 
 const Header = (props) => {
     return <div className={styles.header}>
-        <h2>{props.heading}</h2>
+        <Link to={'/'}>{props.heading}</Link>
     </div>
 }
 

@@ -14,3 +14,4 @@ export const sortPokemon = (pokeArray, ascending = true) => {
     pokeArray.sort((a, b) => a.order - b.order);
   }
 };
+
